@@ -9,14 +9,6 @@ import android.view.View;
 import android.view.ViewGroup;
 
 
-/**
- * A simple {@link Fragment} subclass.
- * Activities that contain this fragment must implement the
- * {@link RedFragment.OnFragmentInteractionListener} interface
- * to handle interaction events.
- * Use the {@link RedFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class RedFragment extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -45,8 +37,8 @@ public class RedFragment extends Fragment {
     public static RedFragment newInstance(String param1, String param2) {
         RedFragment fragment = new RedFragment();
         Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
+        // args.putString(ARG_PARAM1, param1);
+        // args.putString(ARG_PARAM2, param2);
         fragment.setArguments(args);
         return fragment;
     }
@@ -64,13 +56,14 @@ public class RedFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_red, container, false);
+        View viewRedFragment = inflater.inflate(R.layout.fragment_red, container, false);
+        return viewRedFragment;
     }
 
     // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {
         if (mListener != null) {
-            mListener.onFragmentInteraction(uri);
+            mListener.onSwipeRed();
         }
     }
 
@@ -103,6 +96,6 @@ public class RedFragment extends Fragment {
      */
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
-        void onFragmentInteraction(Uri uri);
+        void onSwipeRed();
     }
 }
