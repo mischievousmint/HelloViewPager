@@ -1,10 +1,12 @@
 package com.example.helloviewpager;
 
+import android.graphics.Color;
 import android.net.Uri;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.app.FragmentTabHost;
+import android.support.v4.view.PagerTabStrip;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -13,6 +15,7 @@ public class MainActivity extends AppCompatActivity implements RedFragment.OnFra
 
     FragmentPagerAdapter adapterViewPager;
     ViewPager vpPager;
+    PagerTabStrip pageHeader;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
@@ -22,24 +25,50 @@ public class MainActivity extends AppCompatActivity implements RedFragment.OnFra
         vpPager= findViewById(R.id.vpPager);
 
         adapterViewPager=new MyPagerAdapter(getSupportFragmentManager());
-        vpPager.setAdapter(adapterViewPager);
-    }
 
-    @Override
-    public void onFragmentInteraction(Uri uri){
+        vpPager.setAdapter(adapterViewPager);
+
+        pageHeader = findViewById(R.id.pager_header);
     }
 
     @Override
     public void onSwipeBlue() {
-        int siguiente = vpPager.getCurrentItem() +1;
-        vpPager.setCurrentItem(siguiente, true);
+        int next = vpPager.getCurrentItem() +1;
+        vpPager.setCurrentItem(next, true);
+    }
+
+    @Override
+    public void onBackBlue() {
+        int back = vpPager.getCurrentItem() -1;
+        vpPager.setCurrentItem(back, true);
     }
 
     @Override
     public void onSwipeRed() {
-        int siguiente = vpPager.getCurrentItem() +1;
-        vpPager.setCurrentItem(siguiente, true);
+        int next = vpPager.getCurrentItem() +1;
+        vpPager.setCurrentItem(next, true);
     }
+
+    @Override
+    public void onBackPink() {
+        int back = vpPager.getCurrentItem() -1;
+        vpPager.setCurrentItem(back, true);
+    }
+
+/*    public void setBackground(String color) {
+        switch (color) {
+            case RED:
+                pageHeader.setBackgroundColor(Color.RED);
+                // pageHeader.setDrawFullUnderline(true);
+                // pageHeader.setTabIndicatorColor(Color.RED);
+            case BLUE:
+                pageHeader.setBackgroundColor(Color.BLUE);;
+            case PINK:
+                pageHeader.setBackgroundColor("#FD7EF1");
+            default:
+                return "";
+        }
+    }*/
 
 
     //

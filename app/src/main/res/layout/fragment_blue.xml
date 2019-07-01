@@ -37,9 +37,28 @@
             android:textColor="#33BEFF"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintHorizontal_bias="0.674"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvBlue"
-            app:layout_constraintVertical_bias="0.217"/>
+            app:layout_constraintVertical_bias="0.216" />
+
+        <Button
+            android:id="@+id/btnBackBlue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/mybutton"
+            android:elevation="10dp"
+            android:text="BACK"
+            android:textColor="#33BEFF"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.302"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvBlue"
+            app:layout_constraintVertical_bias="0.216" />
 
 </android.support.constraint.ConstraintLayout>

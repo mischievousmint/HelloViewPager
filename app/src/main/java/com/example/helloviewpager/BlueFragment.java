@@ -14,6 +14,7 @@ import android.widget.TextView;
 public class BlueFragment extends Fragment {
     TextView tvBlue;
     Button btnSwipeBlue;
+    Button btnBackBlue;
 
     private OnFragmentInteractionListener mListener;
 
@@ -45,11 +46,18 @@ public class BlueFragment extends Fragment {
         View viewBlueFragment = inflater.inflate(R.layout.fragment_blue, container, false);
 
         btnSwipeBlue = viewBlueFragment.findViewById(R.id.btnBlue);
+        btnBackBlue = viewBlueFragment.findViewById(R.id.btnBackBlue);
 
         btnSwipeBlue.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 mListener.onSwipeBlue();
+            }
+        });
+        btnBackBlue.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mListener.onBackBlue();
             }
         });
 
@@ -92,5 +100,6 @@ public class BlueFragment extends Fragment {
      */
     public interface OnFragmentInteractionListener {
         void onSwipeBlue();
+        void onBackBlue();
     }
 }

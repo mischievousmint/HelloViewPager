@@ -7,19 +7,12 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 
-/**
- * A simple {@link Fragment} subclass.
- * Activities that contain this fragment must implement the
- * {@link PinkFragment.OnFragmentInteractionListener} interface
- * to handle interaction events.
- * Use the {@link PinkFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class PinkFragment extends Fragment {
 
-
+    Button btnBackPink;
 
     private OnFragmentInteractionListener mListener;
 
@@ -43,14 +36,23 @@ public class PinkFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_pink, container, false);
+        View viewFragmentPink = inflater.inflate(R.layout.fragment_pink, container, false);
+        btnBackPink = viewFragmentPink.findViewById(R.id.btnBackPink);
+
+        btnBackPink.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mListener.onBackPink();
+            }
+        });
+
+        return viewFragmentPink;
     }
 
     // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {
         if (mListener != null) {
-            mListener.onFragmentInteraction(uri);
+            mListener.onBackPink();
         }
     }
 
@@ -82,7 +84,6 @@ public class PinkFragment extends Fragment {
      * >Communicating with Other Fragments</a> for more information.
      */
     public interface OnFragmentInteractionListener {
-        // TODO: Update argument type and name
-        void onFragmentInteraction(Uri uri);
+        void onBackPink();
     }
 }
