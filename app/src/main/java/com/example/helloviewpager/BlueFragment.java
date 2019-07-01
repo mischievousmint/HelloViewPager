@@ -12,15 +12,13 @@ import android.widget.TextView;
 
 
 public class BlueFragment extends Fragment {
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     TextView tvBlue;
     Button btnSwipeBlue;
 
     private OnFragmentInteractionListener mListener;
 
     public BlueFragment() {
-        // Required empty public constructor
+
     }
 
 

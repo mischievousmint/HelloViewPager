@@ -35,6 +35,12 @@ public class MainActivity extends AppCompatActivity implements RedFragment.OnFra
         vpPager.setCurrentItem(siguiente, true);
     }
 
+    @Override
+    public void onSwipeRed() {
+        int siguiente = vpPager.getCurrentItem() +1;
+        vpPager.setCurrentItem(siguiente, true);
+    }
+
 
     //
     public static class MyPagerAdapter extends FragmentPagerAdapter {

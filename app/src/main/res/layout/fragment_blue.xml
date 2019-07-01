@@ -31,7 +31,7 @@
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="8dp"
-            android:background="#FFFF"
+            android:background="@drawable/mybutton"
             android:elevation="10dp"
             android:text="SWIPE"
             android:textColor="#33BEFF"
